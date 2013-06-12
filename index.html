@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DRAWER-0001</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			for(i = 0; i<150;i++){
+<<<<<<< HEAD
+				var randf =(Math.round(Math.random()*7));
+=======
+				var randf =Math.round(Math.random()*(8-1)+1);
+>>>>>>> working and displaying correctly.
+				$('<img />')
+				.attr('src', function(){return "images/a00"+randf+".jpg"})
+				.appendTo('#mylist')
+					
+				}
+				});
+		
+		</script>
+    </head>
+    
+   
+    <body style="background-image:url(images/bg_tile_02.jpg);">
+                 <div id="mylist" style="width:900px; margin-left:auto; margin-right:auto; margin-top:60px; padding:0px;">
+                     
+           
+    </div>
+    </body>
+</html>
