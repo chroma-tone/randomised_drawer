@@ -7,24 +7,34 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
 </script>
 		<script type="text/javascript">
-		$(document).ready(function(){
 		
-			var  drawer = new Array ("a","b");
+		$(document).ready(function() {
+			rollDrawer();
+		});
+				
+		$(document).keydown(function() {
+			rollDrawer();
+		});
+				
+				
+		function rollDrawer() {
+			
+	       var  drawer = new Array ("a","b");
 				
 			drawer = drawer[Math.floor(Math.random()*2)];
-		
 			document.title = "drawer-"+drawer;
 			
+			$('#mylist').empty();
+						
 			for(i = 0; i<150;i++){
 					var randf =Math.round(Math.random()*(8-1)+101);
 				
 				$('<img />')
 				.attr('src', function(){return "images/"+drawer+randf+".jpg"})
 				.appendTo('#mylist')
-					
-				}
-				});
-		
+			};
+		};
+			
 		</script>
     </head>
     
