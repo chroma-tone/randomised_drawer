@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="main.css">
 		
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-</script>
+		</script>
 		<script type="text/javascript">
 		
 		$(document).ready(function() {
@@ -16,21 +16,18 @@
 			rollDrawer();
 		});
 				
-				
 		function rollDrawer() {
 			
-	       var  drawer = new Array ("a","b");
-				
-			drawer = drawer[Math.floor(Math.random()*2)];
-			document.title = "drawer-"+drawer;
-			
+			var  drawer = new Array ("a","b");				
+			var selectDrawer = drawer[Math.floor(Math.random()*2)];
+			document.title = "drawer-"+selectDrawer;
 			$('#mylist').empty();
 						
 			for(i = 0; i<150;i++){
 					var randf =Math.round(Math.random()*(8-1)+101);
 				
 				$('<img />')
-				.attr('src', function(){return "images/"+drawer+randf+".jpg"})
+				.attr('src', function(){return "images/"+selectDrawer+randf+".jpg"})
 				.appendTo('#mylist')
 			};
 		};
@@ -40,9 +37,9 @@
     
    
     <body style="background-image:url(images/bg_tile_02.jpg);">
-                 <div id="mylist" style="width:900px; margin-left:auto; margin-right:auto; margin-top:60px; padding:0px;">
+        <div id="mylist" style="width:900px; margin-left:auto; margin-right:auto; margin-top:60px; padding:0px;">
                      
            
-    </div>
+		</div>
     </body>
 </html>
