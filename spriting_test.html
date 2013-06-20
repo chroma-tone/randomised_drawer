@@ -23,16 +23,17 @@
 		function rollDrawer() {
 			
 			
-			var  drawer = new Array ("c","d","e","f","g");				
-			var selectDrawer = drawer[Math.floor(Math.random()*5)];
+			var  drawer = new Array ("b","c","d","e","f","g","h","i","j","k");				
+			var selectDrawer = drawer[Math.floor(Math.random()*10)];
 			document.title = "drawer-"+selectDrawer;
 			
 			$('#spriteTest').empty();	
 			for(i = 0; i<150;i++){	
-				var pan = Math.floor(Math.random()*10)*60;			
+				var panHori = Math.floor(Math.random()*10)*60;		
+				var panVert = Math.floor(Math.random()*10)*60;				
 				$('<div/>')
 			
-				.attr('style',"display:inline-block; vertical-align:top;  height:60px; width:60px;  background-image:url(images/"+selectDrawer+"-drawer.jpg); background-position: "+pan+"px "+pan+"0px;")
+				.attr('style',"display:inline-block; vertical-align:top;  height:60px; width:60px;  background-image:url(images/"+selectDrawer+"-drawer.jpg); background-position: "+panHori+"px "+panVert+"px;")
 				.appendTo('#spriteTest')
 				
 				
