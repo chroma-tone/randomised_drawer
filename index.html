@@ -8,38 +8,44 @@
 		</script>
 		<script type="text/javascript">
 		
-		$(document).ready(function() {
+		$(document).ready(function(){
 			rollDrawer();
 		});
-				
+		
 		$(document).keydown(function() {
 			rollDrawer();
 		});
-				
+		
+		var myTimer = window.setInterval(rollDrawer, 10000);
+		
 		function rollDrawer() {
 			
-			var  drawer = new Array ("a","b");				
-			var selectDrawer = drawer[Math.floor(Math.random()*2)];
-			document.title = "drawer-"+selectDrawer;
-			$('#mylist').empty();
-						
-			for(i = 0; i<150;i++){
-					var randf =Math.round(Math.random()*(8-1)+101);
-				
-				$('<img />')
-				.attr('src', function(){return "images/"+selectDrawer+randf+".jpg"})
-				.appendTo('#mylist')
-			};
-		};
 			
+			var  drawer = new Array ("b","c","d","e","f","g","h","i","j","k","l","m","n","o");				
+			var selectDrawer = drawer[Math.floor(Math.random()*14)];
+			document.title = "drawer-"+selectDrawer;
+			
+			$('#spriteTest').empty();	
+			for(i = 0; i<150;i++){	
+				var panHori = Math.floor(Math.random()*10)*60;		
+				var panVert = Math.floor(Math.random()*10)*60;				
+				$('<div/>')
+			
+				.attr('style',"display:inline-block; vertical-align:top;  height:60px; width:60px;  background-image:url(images/"+selectDrawer+"-drawer.jpg); background-position: "+panHori+"px "+panVert+"px;")
+				.appendTo('#spriteTest')
+				
+				
+        }
+		window.clearInterval(myTimer);
+		myTimer = window.setInterval(rollDrawer, 10000);
+		};
 		</script>
     </head>
     
    
     <body style="background-image:url(images/bg_tile_02.jpg);">
-        <div id="mylist" style="width:900px; margin-left:auto; margin-right:auto; margin-top:60px; padding:0px;">
-                     
-           
+        <div id="spriteTest" >
 		</div>
     </body>
 </html>
+
